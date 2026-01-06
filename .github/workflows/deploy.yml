@@ -38,7 +38,10 @@ jobs:
       - name: Build
         env:
           VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY || '' }}
-        run: npm run build
+        run: |
+          echo "Building application..."
+          npm run build
+          echo "Build completed successfully"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
