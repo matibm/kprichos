@@ -31,16 +31,21 @@ const Contact = () => {
             const mapElement = document.getElementById("map");
 
             if (mapElement) {
-                const map = new window.google.maps.Map(mapElement, {
+                const mapConfig = {
                     zoom: 14,
                     center: position,
-                    mapId: 'STORE_MAP',
                     disableDefaultUI: true,
                     styles: [
                         { "featureType": "all", "stylers": [{ "saturation": -80 }] },
                         { "featureType": "water", "stylers": [{ "color": "#cad2d3" }] }
                     ]
-                });
+                };
+
+                // Solo agregar mapId si está disponible (requiere Map ID configurado en Google Cloud)
+                // Si no tienes Map ID, puedes remover esta línea
+                // mapConfig.mapId = 'STORE_MAP';
+
+                const map = new window.google.maps.Map(mapElement, mapConfig);
 
                 // AdvancedMarkerElement might need simpler fallback if not using valid mapID or latest version features seamlessly in this context,
                 // but trying standard Marker for wider compatibility if Advanced fails, though original used Advanced.
