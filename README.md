@@ -24,6 +24,16 @@ Frontend de ecommerce para K'Prichos - Tienda de moda femenina en Paraguay. Desa
 npm install
 ```
 
+## 🔐 Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+
+```bash
+VITE_GOOGLE_MAPS_API_KEY=tu_clave_api_aqui
+```
+
+Puedes usar `.env.example` como referencia. Obtén tu clave de Google Maps API en: https://console.cloud.google.com/google/maps-apis
+
 ## 🏃 Desarrollo
 
 ```bash

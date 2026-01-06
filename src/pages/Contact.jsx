@@ -10,8 +10,14 @@ const Contact = () => {
                 return;
             }
 
+            const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+            if (!apiKey) {
+                console.warn('Google Maps API key no configurada. El mapa no se mostrará.');
+                return;
+            }
+
             const script = document.createElement('script');
-            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBB_SVKlC9CcEjDt1H01_B7Gjmb8FiIaGw&callback=initMap&libraries=marker";
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=marker`;
             script.async = true;
             script.defer = true;
             window.initMap = initMap;
